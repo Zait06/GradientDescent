@@ -91,3 +91,15 @@ void GradientDescent::train(){
         // printf("Iteration: %5d;  m = %lf;  b = %lf\n", i+1, m_curr, b_curr);
     }
 }
+
+void GradientDescent::predict(double x){
+    printf("[%lf]\n", m_curr * x + b_curr);
+}
+
+void GradientDescent::predict(vector<double> x){
+    cout<<"[";
+    for(double xc : x){
+        printf("%lf, ", m_curr * xc + b_curr);
+    }
+    cout<<"]"<<endl;
+}

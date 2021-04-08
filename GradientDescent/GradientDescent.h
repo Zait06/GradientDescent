@@ -27,7 +27,8 @@ class GradientDescent{
     public:
         GradientDescent(int);
         void fit(vector<double>, vector<double>);
-        double predict(double x[]);
+        void predict(double x);
+        void predict(vector<double> x);
         void print_array();
         double getIntercept();
         double getCoeficient();

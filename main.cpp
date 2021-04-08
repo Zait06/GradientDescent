@@ -2,14 +2,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <iostream>
-#include "GradientDescent.h"
+#include "GradientDescent/GradientDescent.h"
 
 using namespace std;
 
 int main(int argc, char *argv[]){
 
-    if(argc < 2){
+    if(argc != 2){
         cout<<"Te faltan las iteraciones"<<endl;
+        cout<<argv[0]<<" ite"<<endl;
         exit(0);
     }
 
@@ -21,6 +22,15 @@ int main(int argc, char *argv[]){
 
     GradientDescent gd(atoi(argv[1]));
     gd.fit(va,vb);
+
+
+    cout<<"Prediccion 1:"<<endl;
+    gd.predict(1.5);
+
+    cout<<"\nPrediccion 2:"<<endl;
+    double c[] = {0.5, 1.5, 1.7};
+    vector<double> vc(c, c + sizeof(c) / sizeof(double));
+    gd.predict(vc);
 
     cout<<"Fin del programa"<<endl;
     return 0;
